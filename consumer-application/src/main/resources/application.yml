@@ -1,0 +1,25 @@
+server:
+  port: 8080
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://127.0.0.1:8761}/eureka/
+  instance:
+#    preferIpAddress: true
+    leaseRenewalIntervalInSeconds: 3
+    metadataMap:
+      instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+#logging:
+#  level:
+#    com:
+#      netflix:
+#        eureka: OFF
+#        discovery: OFF
+
+#spring:
+#  cloud:
+#    loadbalancer:
+#      ribbon:
+#        enabled: false
