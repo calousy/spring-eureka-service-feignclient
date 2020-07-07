@@ -2,3 +2,4 @@
 /consumer-application/target/
 /eureka-server/target/
 /example-service/target/
+/.idea/
